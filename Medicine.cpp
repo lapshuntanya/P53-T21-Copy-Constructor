@@ -24,6 +24,42 @@ Medicine::Medicine(const char *title, const char *_type, float price) {
     this->price = price;
 }
 
+Medicine::Medicine(const Medicine &obj) {
+    int sizeTitle = strlen(obj.title) + 1;
+    this->title = new char[sizeTitle];
+   // strcpy_s(this->title, sizeTitle, obj.title);
+    strcpy(this->title, obj.title);
+
+    int sizeType = strlen(obj.type) + 1;
+    this->type = new char[sizeType];
+    // strcpy_s(this->type, sizeType, obj.type);
+    strcpy(this->type, obj.type);
+
+    this->price = obj.price;
+}
+
+Medicine & Medicine::operator=(const Medicine &obj) {
+    // d (this) = a (obj);
+
+    delete[] this->title;
+    delete[] this->type;
+
+
+    int sizeTitle = strlen(obj.title) + 1;
+    this->title = new char[sizeTitle];
+    // strcpy_s(this->title, sizeTitle, obj.title);
+    strcpy(this->title, obj.title);
+
+    int sizeType = strlen(obj.type) + 1;
+    this->type = new char[sizeType];
+    // strcpy_s(this->type, sizeType, obj.type);
+    strcpy(this->type, obj.type);
+
+    this->price = obj.price;
+
+    return *this;
+}
+
 Medicine::~Medicine() {
     delete[] title;
     delete[] type;

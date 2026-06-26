@@ -18,6 +18,8 @@ class Medicine {
 public:
     Medicine();
     Medicine(const char *title, const char *type, float price);
+    Medicine(const Medicine& obj); //Copy constructor
+    Medicine& operator = (const Medicine& obj); //Assignment operator (=)
     ~Medicine();
 
     void setTitle(const char* title);
