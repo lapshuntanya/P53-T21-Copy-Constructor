@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(P53_T21_Copy_Constructor main.cpp
         Medicine.cpp
-        Medicine.h)
+        Medicine.h
+        Array_Template.h
+        Pharmacy.cpp
+        Pharmacy.h)
