@@ -16,9 +16,10 @@ public:
 
     void addMedicine(Medicine obj);
     void sortMedByPrice();
-    void findMedByTitle()const;
+    void findMedByTitle(const char* user)const;
     void showInfo()const;
 };
+
 
 
 #endif //P53_T21_COPY_CONSTRUCTOR_PHARMACY_H
