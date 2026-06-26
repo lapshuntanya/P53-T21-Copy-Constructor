@@ -15,14 +15,14 @@
    delete[] arrMed;
   }
 }
-void Pharmacy::addMedicine(Medicine obj) {
+void Pharmacy::addMedicine(Medicine obj) { // Copy Constructor of class Medicine
   addItemBack(arrMed, sizeMed, obj);
 }
 
  void Pharmacy::sortMedByPrice() {
   mySort<Medicine>(arrMed, sizeMed, [](Medicine a, Medicine b) {
    return a.getPrice() > b.getPrice();
-  });
+  }); // Assignment operator of class Medicine
 }
 
  void Pharmacy::findMedByTitle(const char* user) const {
@@ -41,6 +41,5 @@ void Pharmacy::addMedicine(Medicine obj) {
   cout << "Amount of medicines: " << sizeMed << endl;
   for (int i = 0; i < sizeMed; ++i) {
      arrMed[i].showInfo();
-
   }
 }
